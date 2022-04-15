@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato 5x5</title>
+</head>
+
+<body>
+    <h1>José Alejandro Rodríguez Ramírez</h1>
+    <br>
+    <h2>CODIGO GATO 5X5: </h2>
+    <br>
+    <p>import java.util.*;<br />public class gato5x5 {<br />public static void main(String[] args) {<br />Scanner sc=
+        new Scanner(System.in);<br />int[][] gato; // CREA EL ARREGLO "GATO"<br />gato= new int [5][5]; // INICIALIZA EL
+        ARREGLO GATO DE 5X5<br /><br /><br />iniciar(gato); //RELLENA EL ARREGLO CON CEROS<br />tiroJugador(gato); //SE
+        LLAMA AL METODO PARA QUE TIREN LOS JUGADORES<br />}<br />public boolean winner;<br />public static void
+        iniciar(int gato[][]){ // METODO PARA INICIALIZAR EL ARREGLO EN CEROS<br /><br />for (int i = 0; i &lt; 5; i++)
+        { //CICLO FOR PARA RECORRER EL ARREGLO <br />for (int j = 0; j &lt; 5; j++) { //CICLO FOR PARA RECORRER EL
+        ARREGLO <br />gato[i][j]= 0; //COLOCA UN "0" EN LA POSICION ACTUAL DEL
+        ARREGLO<br />}<br />}<br /><br />}<br />public static void tiroJugador(int gato[][]){ //METODO PARA QUE EL
+        JUGADOR 1 TIRAR<br /><br />Scanner sc= new Scanner(System.in); //DECLARACION DE VARIABLE DE TIPO SCANNER PARA
+        LEER POR TECLADO<br />int x, y; // DECLARACION DE VARIABLES PARA PODER COLOCAR LAS POSICIONES EN EL
+        ARREGLO<br />System.out.println("Jugador 1, &iquest;En qu&eacute; posici&oacute;n quiere tirar?"); //IMPRIME LA
+        PREGUNTA PARA SABER DONDE QUIERE TIRAR EL JUGADOR<br />for (int i = 0; i &lt; 5; i++) { //CICLO FOR PARA
+        RECORRER EL ARREGLO<br />for (int j = 0; j &lt; 5; j++) { //CICLO FOR PARA RECORRER EL
+        ARREGLO<br />System.out.println("Posici&oacute;n: "); <br />x=sc.nextInt(); // TOMA LA POSICION X
+        <br />y=sc.nextInt(); //TOMA LA POSICION Y<br /><br />if (gato[x][y]==0) { // IF PARA REVISAR SI LA POSICION
+        ESTA DESOCUPADA <br />gato[x][y]= 1; // SI ESTA DESOCUPADA COLOCA UN "1"<br />}else{ // SI NO ESTA DESOCUPADA SE
+        MUESTRA UN MENSAJE DE ERROR <br />System.out.println("Error, vuelva a tirar!"); // IMPRIME EL MENSAJE DE ERROR
+        <br />tiroJugador(gato); //LLAMA AL METODO PARA QUE TIRE EL JUGADOR <br />imprimir(gato); // LLAMA AL METODO
+        PARA IMPRIMIR EL TABLERO<br />ganaste(gato);<br /><br />}<br />tiroMaquina(gato); //LLAMA AL METODO PARA QUE
+        TIRE LA MAQUINA<br />imprimir(gato); //LLAMA AL METODO PARA IMPRIMIR EL
+        TABLERO<br />ganaste(gato);<br />}<br />} <br />}<br />public static void tiroMaquina(int gato[][]){<br />for
+        (int i = 0; i &lt; 5; i++) { //CICLO FOR PARA RECORRER EL ARREGLO<br />for (int j = 0; j &lt; 5; j++) { //CICLO
+        FOR PARA RECORRER EL ARREGLO<br />if (gato[i][j]==0) { // SI LA POSICION ACTUAL DEL ARREGLO ES IGUAL A "0" SE
+        COLOCA UN 2<br />gato[i][j]=2;<br />return; // RETURN PARA SACARNOS DE LOS CICLOS FOR
+        <br />}<br />}<br />}<br />}<br />public static void imprimir(int gato[][]){ // METODO PARA IMPRIMIR EL TABLERO
+        <br />for (int i = 0; i &lt; 5; i++) { //CICLO FOR PARA RECORRER EL ARREGLO<br />for (int j = 0; j &lt; 5; j++)
+        { //CICLO FOR PARA RECORRER EL ARREGLO<br />System.out.print(gato[i][j]+" "); //IMPRIME LA POSICION ACTUAL DEL
+        ARREGLO <br />}<br />System.out.println(""); //DA UN SALTO DE LINEA<br />}<br />}<br /><br /><br />public static
+        void ganaste(int gato[][]){ // METODO PARA VER QUIEN GANA<br />//CONDICIONES PARA QUE GANE EL JUGADOR 1<br />if
+        (gato[0][0]==1 &amp;&amp; gato[0][1]== 1 &amp;&amp; gato[0][2]==1 &amp;&amp; gato[0][3]==1 &amp;&amp;
+        gato[0][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[1][0]==1 &amp;&amp; gato[1][1]== 1 &amp;&amp; gato[1][2]==1 &amp;&amp; gato[1][3]==1 &amp;&amp;
+        gato[1][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[2][0]==1 &amp;&amp; gato[2][1]== 1 &amp;&amp; gato[2][2]==1 &amp;&amp; gato[2][3]==1 &amp;&amp;
+        gato[2][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[3][0]==1 &amp;&amp; gato[3][1]== 1 &amp;&amp; gato[3][2]==1 &amp;&amp; gato[3][3]==1 &amp;&amp;
+        gato[3][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[4][0]==1 &amp;&amp; gato[4][1]== 1 &amp;&amp; gato[4][2]==1 &amp;&amp; gato[4][3]==1 &amp;&amp;
+        gato[4][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][0]==1 &amp;&amp; gato[1][0]== 1 &amp;&amp; gato[2][0]==1 &amp;&amp; gato[3][0]==1 &amp;&amp;
+        gato[4][0]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][1]==1 &amp;&amp; gato[1][1]== 1 &amp;&amp; gato[2][1]==1 &amp;&amp; gato[3][1]==1 &amp;&amp;
+        gato[4][1]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][2]==1 &amp;&amp; gato[1][2]== 1 &amp;&amp; gato[2][2]==1 &amp;&amp; gato[3][2]==1 &amp;&amp;
+        gato[4][2]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][3]==1 &amp;&amp; gato[1][3]== 1 &amp;&amp; gato[2][3]==1 &amp;&amp; gato[3][3]==1 &amp;&amp;
+        gato[4][3]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][4]==1 &amp;&amp; gato[1][4]== 1 &amp;&amp; gato[2][4]==1 &amp;&amp; gato[3][4]==1 &amp;&amp;
+        gato[4][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][0]==1 &amp;&amp; gato[1][1]== 1 &amp;&amp; gato[2][2]==1 &amp;&amp; gato[3][3]==1 &amp;&amp;
+        gato[4][4]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");<br />System.exit(0);<br /><br />}<br />if
+        (gato[0][4]==1 &amp;&amp; gato[1][3]== 1 &amp;&amp; gato[2][2]==1 &amp;&amp; gato[3][1]==1 &amp;&amp;
+        gato[4][0]==1) {<br />System.out.println("EL JUGADOR 1 HA GANADO!");
+        <br />System.exit(0);<br />}<br /><br /><br />//CONDICIONES PARA QUE GANE EL JUGADOR 2<br /><br />if
+        (gato[0][0]==2 &amp;&amp; gato[0][1]== 2 &amp;&amp; gato[0][2]==2 &amp;&amp; gato[0][3]==2 &amp;&amp;
+        gato[0][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[1][0]==2 &amp;&amp; gato[1][1]== 2 &amp;&amp; gato[1][2]==2 &amp;&amp; gato[1][3]==2 &amp;&amp;
+        gato[1][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[2][0]==2 &amp;&amp; gato[2][1]== 2 &amp;&amp; gato[2][2]==2 &amp;&amp; gato[2][3]==2 &amp;&amp;
+        gato[2][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[3][0]==2 &amp;&amp; gato[3][1]== 2 &amp;&amp; gato[3][2]==2 &amp;&amp; gato[3][3]==2 &amp;&amp;
+        gato[3][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[4][0]==2 &amp;&amp; gato[4][1]== 2 &amp;&amp; gato[4][2]==2 &amp;&amp; gato[4][3]==2 &amp;&amp;
+        gato[4][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][0]==2 &amp;&amp; gato[1][0]== 2 &amp;&amp; gato[2][0]==2 &amp;&amp; gato[3][0]==2 &amp;&amp;
+        gato[4][0]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][1]==2 &amp;&amp; gato[1][1]== 2 &amp;&amp; gato[2][1]==2 &amp;&amp; gato[3][1]==2 &amp;&amp;
+        gato[4][1]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][2]==2 &amp;&amp; gato[1][2]== 2 &amp;&amp; gato[2][2]==2 &amp;&amp; gato[3][2]==2 &amp;&amp;
+        gato[4][2]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][3]==2 &amp;&amp; gato[1][3]== 2 &amp;&amp; gato[2][3]==2 &amp;&amp; gato[3][3]==2 &amp;&amp;
+        gato[4][3]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][4]==2 &amp;&amp; gato[1][4]== 2 &amp;&amp; gato[2][4]==2 &amp;&amp; gato[3][4]==2 &amp;&amp;
+        gato[4][3]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][0]==2 &amp;&amp; gato[1][1]== 2 &amp;&amp; gato[2][2]==2 &amp;&amp; gato[3][3]==2 &amp;&amp;
+        gato[4][4]==2) {<br />System.out.println("EL JUGADOR 2 HA GANADO!");<br />System.exit(0);<br />}<br />if
+        (gato[0][4]==2 &amp;&amp; gato[1][3]== 2 &amp;&amp; gato[2][2]==2 &amp;&amp; gato[3][1]==2 &amp;&amp;
+        gato[4][0]==2) {<br />System.out.println("EL JUGADOR 2 HA
+        GANADO!");<br />System.exit(0);<br /><br />}<br /><br />}<br />}</p>
+</body>
+
+</html>
